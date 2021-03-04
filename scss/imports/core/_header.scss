@@ -1,0 +1,221 @@
+// css header
+header{
+    width:100%;
+    max-width: $container-max-width;
+    height: var(--heightHeader);
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    transition: 0.3s;
+    &.active{
+        background: black;
+        opacity: 0.8;
+        transition: 0.3s;
+    }
+    // background:transparent;
+    z-index: 99;
+    .container-fluid
+    {
+        height: 100%;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+    .logo{
+        .hidden{
+            display: none;
+        }
+    }
+    .menu{
+        display: flex;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        li{
+            a{
+                @include mid(true);
+                height: 100%;
+                font-size: $fz-text-m;
+                line-height: 22px;
+                color: #a7a7a7;
+                opacity: 0.5;
+                text-transform: uppercase;
+                font-family: pb;
+                text-decoration: none;
+                padding: 0 30px;
+                position: relative;
+                @include transition($t);
+                &:after{
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background-color: $yellow-cl;
+                    position: absolute;
+                    left: 0;
+                    bottom: 30px;
+                    @include transform(scaleX(0));
+                    @include transform-origin(left);
+                    @include transition($t);
+                }
+                &:hover,
+                &.active{
+                    opacity: 1;
+                    color: $yellow-cl;
+                    @include transition($t);
+                    &:after{
+                        @include transform(scaleX(1));
+                        @include transform-origin(right);
+                        @include transition($t);
+                        
+                    }
+                }
+              
+            }
+        }
+    }
+    .right{
+        height: 100%;
+        display:flex;
+        align-items: center;
+        .lang{
+            position: relative;
+            height: 100%;
+            cursor: pointer;
+            &__current{
+                height: 100%;
+                display:flex;
+                align-items: center;
+                span{
+                    font-size: $fz-text-m;
+                    line-height: 22px;
+                    color: #a7a7a7;
+                    opacity: 0.5;
+                    text-transform: uppercase;
+                    font-family: pb;
+                    margin-right: 3px;
+                }
+                i{
+                    img{
+                        width: 10px;
+                    };
+                }
+               
+            }
+            &__select{
+                background-color:white;
+                position: absolute;
+                right: 0;
+                top: var(--heightHeader);
+                z-index: 198;
+                @include visible(0);
+                @include transition($t);
+                a{
+                    text-decoration: none;
+                    padding: 7px 20px;
+                    display: block;
+                    font-size: $fz-text;
+                    color: #050404;
+                    text-transform: uppercase;
+                    @include transition($t);
+                    &:first-child{
+                        padding-top: 12px;
+                    }
+                    &:last-child{
+                        padding-bottom: 12px;
+                    }
+                    &:hover{
+                        color:$hover-cl;
+                    }
+                }
+           
+            }
+            &:hover{
+                .lang__select{
+                    @include visible(1);
+                    
+                }
+            }
+           
+        }
+        .btnmenu{
+            width: 50px;
+            height: 30px;
+            position: relative;
+            margin-left: 20px;
+            cursor: pointer;
+            display:none;
+            @include transition($t);
+           &:after,
+           span,
+           &:before{
+                content:'';
+               width: 100%;
+               height: 2px;
+               display: block;
+               position: absolute;
+               background-color: $white-cl;
+               @include transition($t);
+               
+            }
+            span{
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include transition($t);
+            }
+            &:after{
+                bottom:0;
+                @include transition($t);
+            }
+            &.active{
+                &:before{
+                    top: 10px;
+                    @include transform(rotate(-45deg));
+                    @include transition($t);
+                }
+                span{
+                    opacity: 0;
+                    @include transition($t);
+                }
+                &:after{
+                    top: 10px;
+                    @include transform(rotate(45deg));
+                    @include transition($t);
+                }
+            }
+        }
+    }
+}
+@include sm{
+    //tablet
+    header{
+        background-color: $black-cl;
+        --heightHeader: 60px;
+        .logo{
+            a{
+                img{
+                    width: 120px;
+                }
+            }
+        }
+        .menu{
+            display: none;
+           
+        }
+        .right{
+            .btnmenu{
+                display: block;
+            }
+        }
+
+    }
+}
+@include xs{
+    header{
+        --heightHeader: 50px;
+    }
+    
+    .btnmenu{
+        display:block;
+    }
+}

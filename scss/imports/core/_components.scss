@@ -1,0 +1,133 @@
+// css components
+
+.textbox{
+    --pText: 100px;
+    --pRight: 20px;
+    padding-left: var(--pText);
+    padding-right: var(--pRight);
+    padding-top: 80px;
+    .titlemain{
+        @include text($fz-titlemain,pb,normal,$black-cl,uppercase);
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        &:before{
+            content:'';
+            width: 80px;
+            height: 2px;
+            background: #555555;
+            display: inline-block;
+            position: absolute;
+            margin-left: -80px;
+            left: -20px;
+        }
+        &.--yellow{
+            color: $yellow-cl;
+        }
+        &.--white{
+            color: $yellow-cl;
+        }
+    }
+    .description{
+        padding: 20px 0 18px 0;
+        line-height: 22px;
+        color: $text-black-cl;
+         &.--white{
+            color: $white-cl;
+        }
+    }
+    &.--textright{
+        text-align: right;
+        padding-left: var(--pRight);
+        padding-right: var(--pText);
+        .titlemain{
+            flex-direction: row-reverse;
+            &:before{
+                margin-left: initial;
+                left: initial;
+                margin-right: -80px;
+                right: -20px;
+            }
+        }
+    }
+    &.--textcenter{
+        max-width: 480px;
+        margin: auto;
+        padding-left:0px;
+        padding-top: 0px;
+        padding-right: 0px;
+        text-align: center;
+        .titlemain{
+            flex-direction: column-reverse;
+            &:before{
+                width: 40px;
+                height: 3px;
+                background: $yellow-cl;
+                left: initial;
+                right: initial;
+                margin: -5px auto;
+                
+                
+            }
+        }
+    }
+    @include sm{
+        --pText: 0px;
+        --pRight: 20px;
+        padding-left: var(--pText);
+        padding-right: var(--pRight);
+        padding-top: 20px;
+        .titlemain{
+            &:before{
+                display: none;
+            }
+        }
+    }
+    @include xs{
+        .titlemain{
+            font-size: 34px;
+        }
+    }
+}
+// pop up video
+.popup-video{
+    z-index: 1000;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    //display: flex;
+    justify-content: center;
+    align-items: center;
+    .iframe-wrap{
+        background: #000;
+        border: 5px solid #eee;
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: 600px;
+        max-height: 330px;
+        .close{
+            position: absolute;
+            right: -25px;
+            top: -25px;
+            border-radius: 100px;
+            cursor: pointer;
+            font-size: 20px;
+            width: 50px;
+            height: 50px;
+            background: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @include sm{
+            width: 90%;
+        }
+    }
+
+}
