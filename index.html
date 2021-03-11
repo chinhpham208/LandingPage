@@ -18,6 +18,7 @@
     <meta property="og:image" content="" />
 
     <link rel="stylesheet" href="dest/style.min.css">
+    <link rel="stylesheet" href="dest/stylelibs.min.css">
     <!-- <link rel="stylesheet" href="dest/fonts.css"> -->
     <link rel="stylesheet" href="dest/fonts.css">
 </head>
@@ -241,12 +242,38 @@
                     <h2 class="titlemain --white">GALLERY</h2>
                     <p class="description --white">We are a team of professionals in the wood processing and the creation of wooden furniture of the highest class.</p>
                 </div>
-                <div class="gallery__grid">
-                    <div class="gallery__grid-item item1"><img src="img/Gallery1.jpg" alt=""></div>
+                <div class="gallery__grid" itemscope data-pswp-uid="1">
+                    <figure class="gallery__grid-item item1">
+                        <a href="img/Gallery1Goc.jpg" data-size="640 x 853">
+                            <img src="img/Gallery1.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="gallery__grid-item item2">
+                        <a href="img/Gallery2Goc.jpg" data-size="640 x 427">
+                            <img src="img/Gallery2.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="gallery__grid-item item3">
+                        <a href="img/Gallery3Goc.jpg" data-size="640 x 960">
+                            <img src="img/Gallery3.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="gallery__grid-item item4">
+                        <a href="img/Gallery4Goc.jpg" data-size="640 x 427">
+                            <img src="img/Gallery4.jpg" alt="">
+                        </a>
+                    </figure>
+                    <figure class="gallery__grid-item item5">
+                        <a href="img/Gallery5Goc.jpg" data-size="640 x 427">
+                            <img src="img/Gallery5.jpg" alt="">
+                        </a>
+                    </figure>
+                </div>
+                    <!-- <div class="gallery__grid-item item1"><img src="img/Gallery1.jpg" alt=""></div>
                     <div class="gallery__grid-item item2"><img src="img/Gallery2.jpg" alt=""></div>
                     <div class="gallery__grid-item item3"><img src="img/Gallery3.jpg" alt=""></div>
                     <div class="gallery__grid-item item4"><img src="img/Gallery4.jpg" alt=""></div>
-                    <div class="gallery__grid-item item5"><img src="img/Gallery5.jpg" alt=""></div>
+                    <div class="gallery__grid-item item5"><img src="img/Gallery5.jpg" alt=""></div> -->
                 </div>
             </div>
         </section>
@@ -335,10 +362,12 @@
         </section>
         <section class="photos">
             <div class="photos__item">
-                <img src="img/UnderNew1.jpg" alt="">
-                <img src="img/UnderNew2.jpg" alt="">
-                <img src="img/UnderNew3.jpg" alt="">
-                <img src="img/UnderNew4.jpg" alt="">
+                <div class="photos__item-cell"><img src="img/UnderNew1.jpg" alt=""></div>
+                <div class="photos__item-cell"><img src="img/UnderNew2.jpg" alt=""></div>
+                <div class="photos__item-cell"><img src="img/UnderNew3.jpg" alt=""></div>
+                <div class="photos__item-cell"><img src="img/UnderNew4.jpg" alt=""></div>
+                <div class="photos__item-cell"><img src="img/Quality1.jpg" alt=""></div>
+                <div class="photos__item-cell"><img src="img/Gallery1.jpg" alt=""></div>
             </div>
         </section>
     </main>
@@ -367,6 +396,42 @@
         jk7LbXUpmz0
         ddaEtFOsFeM
      -->
+     <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="dest/jsmain.min.js"></script>
     <script src="dest/main.js"></script>
 </body>

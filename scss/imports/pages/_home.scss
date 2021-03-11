@@ -377,6 +377,7 @@
             overflow: hidden;
             position: relative;
             cursor: pointer;
+           
             img{
                 top: 50%;
                 left: 50%;
@@ -571,20 +572,38 @@
                 transition: 0.3s;
             }
         }
+        @include xs{
+            flex-direction: column;
+            .tag{
+                margin-bottom: 15px;
+            }
+        }
     }
 }
 .photos{
-    padding-bottom: 90px;
+    height: 500px;
+    margin-bottom: 30px;
     &__item{
         width: 100%;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-        padding-top: 0;
-        img{
-            min-width: 300px;
-            margin: 0 15px;
+        height: 100%;
+        position: relative;
+        &-cell{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+           >img{
+                max-height:500px;
+                max-width:500px;
+                height:auto;
+                width:auto;
+                display: block;
+                padding: 5px;
+                margin: 0 10px;
+                box-shadow: 0px 0px 3px 1px rgba(0,0,0,0.33);
+                object-fit: cover;
+           }
         }
+        
     }
 }
 

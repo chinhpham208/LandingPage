@@ -76,8 +76,10 @@ module.exports = grunt => {
                     watchTask: true,
                 	server:'./'
                 },
+				
             }
         }
+		
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-uglify');
